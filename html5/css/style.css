@@ -5,7 +5,147 @@ body {
     color: white;   
 }
 
+/* header */
+
+/* 
+
+    header
+    - dodajemy bg color na cały header (skorzystaj z klasy)
+    - ustawiamy linki obok siebie
+    - przesuwamy sekcję z linkami do prawej strony (justify-content z flexboxa)
+    
+    linki 
+    - pogrubione, 
+    - inny kolor niż bg color headera
+    - wyłączamy podkreślenie
+    - zmiana stanu na hover + animacja na przejście
+    - text-decoration - odpowiada za podkreślenie (wartość "none" ją wyłączy)
+
+    wskazówki:
+    - ul li a -> selektor dla hiperłącza w liście elementów
+    - header.klasa - selektor dla headera o konkretnej klasie
+    - warto stylować "od góry" tzn schodzimy w dół (w drzewie HTML) z dokładnością stylów
+
+*/
+
+header.topHeader {
+    background-color: green;
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
+header.topHeader ul {
+    /* list-style: none; */
+    /* display: flex;
+    flex-direction: row;
+    text-align: justify; */
+}
+
+
+
+
+
 h1{
     color: #A3BFBF;
     font-weight: 700;
 }
+
+/* form */
+
+form#contactForm {
+    width: 50%;
+}
+
+form#contactForm input,
+form#contactForm textarea {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+form#contactForm > label {
+    display: flex;
+    flex-direction: column;
+
+    /* margin-top: 20px; */
+}
+
+form#contactForm > label > span {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+form#contactForm > div > label > span {
+    font-weight: 700;
+}
+
+form#contactForm > div,
+form#contactForm > label {
+    margin-top: 20px;
+}
+
+/* 
+    form div .red {} - wskazujemy na element o klasie red wewnątrz <div>, który jest wewnątrz <form>
+    form div.red {}  - wskazujemy
+*/
+
+form#contactForm input[type=submit] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+
+    background: linear-gradient(0deg, rgba(10,25,92,1) 0%, rgba(255,255,255,1) 100%);
+    color: #000;
+
+    font-weight: 700;
+    font-size: 11px;
+    border: 0px;
+
+    /* sterowanie procesem przejścia, np. ze stanu podstawowego na stan "najazd", podajemy czas
+    i właściwości, które mają ulec zmianie w podanym czasie (w tym przypadku wszystkie - all) */
+    transition: .3s all;
+}
+
+/* pseudoklasy */
+/* :hover - najazd myszką */
+form#contactForm input[type=submit]:hover {
+    background: rgb(255,255,255);
+    /* rgba - a odpowiada za kanał alpha (przezroczystość), 1 oznacza 100% wypełnienia, 0.1 - 10% */
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(10,25,92,1) 100%);
+    cursor: pointer;
+    color: #fff; /* color - kolor tekstu (na buttonie) */
+}
+
+/* form#contactForm > label */
+/* odnosi się do form > label - label jest bezpośredniom dzieckiem form */
+
+/* form#contactForm label */
+/* odnosi sie do np. form > div > div > p > span > label - label leży gdziekolwiek w strukturze HTML */
+
+/* form - end */
+
+footer.bottom {
+    /* ramka, solid - ciągła linia, dotted - kropkowana, dashed - przerywana */
+    border: 1px solid #F2E6CE;
+
+    /* odstępy wewnętrzne */
+    padding: 10px 5px;
+
+    /* wyrónianie tekstu - left, right, center, justify */
+    text-align: center;
+
+    /* margines - od góry */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    /* shorthand margin - 20px góra/dół, 10px lewo/prawo */
+    margin: 20px 10px;
+
+    /* margin - zgodnie z ruchem wskazówek zegara - góra/prawo/dół/lewo */
+    margin: 20px 5px 20px 10px;
+
+    /* margin - 20px góra, 10px lewo/prawo, 5px od dołu */
+    margin: 2-px 10px 5px;
+}
+
